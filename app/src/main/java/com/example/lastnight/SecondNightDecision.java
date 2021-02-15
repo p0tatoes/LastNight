@@ -10,11 +10,14 @@ import android.widget.Button;
 public class SecondNightDecision extends AppCompatActivity implements View.OnClickListener{
 
     char decision_SecondNight = ' ';
+    boolean bringLighter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second_night_decision);
+
+        bringLighter = getIntent().getBooleanExtra("BROUGHT_LIGHTER", true);
 
         Button btnDecision1 = findViewById(R.id.btnDecision1_SecondNightDecision);
         Button btnDecision2 = findViewById(R.id.btnDecision2_SecondNightDecision);
@@ -30,11 +33,13 @@ public class SecondNightDecision extends AppCompatActivity implements View.OnCli
             case R.id.btnDecision1_SecondNightDecision:
                 decision_SecondNight = 'a';
                 outcome_SecondNightDecision.putExtra("decision_secondnight", decision_SecondNight);
+                outcome_SecondNightDecision.putExtra("BROUGHT_LIGHTER", bringLighter);
                 startActivity(outcome_SecondNightDecision);
                 break;
             case R.id.btnDecision2_SecondNightDecision:
                 decision_SecondNight = 'b';
                 outcome_SecondNightDecision.putExtra("decision_secondnight", decision_SecondNight);
+                outcome_SecondNightDecision.putExtra("BROUGHT_LIGHTER", bringLighter);
                 startActivity(outcome_SecondNightDecision);
                 break;
         }

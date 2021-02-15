@@ -7,39 +7,38 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class FirstNightDecision extends AppCompatActivity implements View.OnClickListener {
+public class MidnightDecision extends AppCompatActivity implements View.OnClickListener{
 
+    char decision_Midnight = ' ';
     boolean bringLighter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_first_night_decision);
+        setContentView(R.layout.activity_midnight_decision);
 
         bringLighter = getIntent().getBooleanExtra("BROUGHT_LIGHTER", true);
 
-        Button btnDecision1 = findViewById(R.id.btnDecision1_FirstNight);
-        Button btnDecision2 = findViewById(R.id.btnDecision2_FirstNight);
+        Button btnDecision1 = findViewById(R.id.btnDecision1_Midnight);
+        Button btnDecision2 = findViewById(R.id.btnDecision2_Midnight);
         btnDecision1.setOnClickListener(this);
         btnDecision2.setOnClickListener(this);
-
     }
 
     @Override
-    public void onClick (View v) {
+    public void onClick (View view) {
 
-        Intent next = new Intent(this, FirstNightConclusion.class);
-        int decision_FirstNight;
-        switch (v.getId()) {
-            case R.id.btnDecision1_FirstNight:
-                decision_FirstNight = 1;
-                next.putExtra("decision_FirstNight", decision_FirstNight);
+        Intent next = new Intent(this, MidnightOutcome.class);
+        switch (view.getId()) {
+            case R.id.btnDecision1_Midnight:
+                decision_Midnight = 'a';
+                next.putExtra("decision_midnight", decision_Midnight);
                 next.putExtra("BROUGHT_LIGHTER", bringLighter);
                 startActivity(next);
                 break;
-            case R.id.btnDecision2_FirstNight:
-                decision_FirstNight = 2;
-                next.putExtra("decision_FirstNight", decision_FirstNight);
+            case R.id.btnDecision2_Midnight:
+                decision_Midnight = 'b';
+                next.putExtra("decision_midnight", decision_Midnight);
                 next.putExtra("BROUGHT_LIGHTER", bringLighter);
                 startActivity(next);
                 break;

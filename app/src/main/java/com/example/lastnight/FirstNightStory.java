@@ -11,11 +11,14 @@ import android.widget.TextView;
 public class FirstNightStory extends AppCompatActivity implements View.OnClickListener {
 
     int page = 1;
+    boolean bringLighter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_first_night_story);
+
+        bringLighter = getIntent().getBooleanExtra("BROUGHT_LIGHTER", true);
 
         Button btnNext = findViewById(R.id.btnNext_FirstNightStory);
         btnNext.setOnClickListener(this);
@@ -39,6 +42,7 @@ public class FirstNightStory extends AppCompatActivity implements View.OnClickLi
                     page++;
                 }
                 else if (page == 3) {
+                    next.putExtra("BROUGHT_LIGHTER", bringLighter);
                     startActivity(next);
                 }
                 break;

@@ -9,10 +9,14 @@ import android.widget.Button;
 
 public class TheFirstNightCard extends AppCompatActivity implements View.OnClickListener{
 
+    boolean bringLighter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_the_first_night_card);
+
+        bringLighter = getIntent().getBooleanExtra("BROUGHT_LIGHTER", true);
 
         Button btnNext = findViewById(R.id.btnNext_FirstNightStory);
         btnNext.setOnClickListener(this);
@@ -27,6 +31,7 @@ public class TheFirstNightCard extends AppCompatActivity implements View.OnClick
 
         switch (v.getId()) {
             case R.id.btnNext_FirstNightStory:
+                next.putExtra("BROUGHT_LIGHTER", bringLighter);
                 startActivity(next);
                 break;
         }

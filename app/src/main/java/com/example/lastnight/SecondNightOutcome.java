@@ -10,10 +10,14 @@ import android.widget.TextView;
 
 public class SecondNightOutcome extends AppCompatActivity implements View.OnClickListener {
 
+    boolean bringLighter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second_night_outcome);
+
+        bringLighter = getIntent().getBooleanExtra("BROUGHT_LIGHTER", true);
 
         TextView txtOutcome = findViewById(R.id.txtOutcome_SecondNightOutcome);
         Button btnNext = findViewById(R.id.btnNext_SecondNightOutcome);
@@ -37,6 +41,7 @@ public class SecondNightOutcome extends AppCompatActivity implements View.OnClic
         Intent next = new Intent(this, Midnight.class);
         switch (view.getId()) {
             case R.id.btnNext_SecondNightOutcome:
+                next.putExtra("BROUGHT_LIGHTER", bringLighter);
                 startActivity(next);
                 break;
         }

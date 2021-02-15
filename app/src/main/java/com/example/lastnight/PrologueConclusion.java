@@ -10,14 +10,14 @@ import android.widget.TextView;
 
 public class PrologueConclusion extends AppCompatActivity implements View.OnClickListener {
 
-
-
+    boolean bringLighter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_prologue_conclusion);
 
+        bringLighter = getIntent().getBooleanExtra("BROUGHT_LIGHTER", true);
         Intent p2Outcome2 = getIntent();
         char prologue2Outcome = p2Outcome2.getCharExtra("p2_decision", ' ');
         TextView txtPrologue2Outcome = findViewById(R.id.txtPrologue2Outcome);
@@ -40,6 +40,7 @@ public class PrologueConclusion extends AppCompatActivity implements View.OnClic
 
         switch (view.getId()) {
             case R.id.btnPrologue2Nxt:
+                next.putExtra("BROUGHT_LIGHTER", bringLighter);
                startActivity(next);
                 break;
         }
