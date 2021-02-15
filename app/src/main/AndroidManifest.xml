@@ -9,7 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.LastNight">
-        <activity android:name=".FirstNightConclusion"></activity>
+        <activity android:name=".Midnight"></activity>
+        <activity android:name=".SecondNightOutcome" />
+        <activity android:name=".SecondNightDecision" />
+        <activity android:name=".SecondNightStory" />
+        <activity android:name=".SecondNightCard" />
+        <activity android:name=".FirstNightConclusion" />
         <activity android:name=".FirstNightDecision" />
         <activity android:name=".FirstNightStory" />
         <activity android:name=".PrologueConclusion" />

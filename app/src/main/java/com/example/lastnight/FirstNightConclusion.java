@@ -4,14 +4,19 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
-public class FirstNightConclusion extends AppCompatActivity {
+public class FirstNightConclusion extends AppCompatActivity implements View.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_first_night_conclusion);
+
+        Button btnNext = findViewById(R.id.btnNext_FirstNightConclusion);
+        btnNext.setOnClickListener(this);
 
         Intent next = getIntent();
         int decision_FirstNight = next.getIntExtra("decision_FirstNight", 0);
@@ -25,5 +30,17 @@ public class FirstNightConclusion extends AppCompatActivity {
                 txtStory.setText("You decided to play safe and stay inside. You prayed that the fire would not go out until morning, though the fire went out. You felt cold for most of the night, but you managed to make it until morning.");
                 break;
         }
+    }
+    @Override
+    public void onClick (View v) {
+
+        Intent next = new Intent(this, SecondNightCard.class);
+
+        switch(v.getId()) {
+            case R.id.btnNext_FirstNightConclusion:
+                startActivity(next);
+                break;
+        }
+
     }
 }

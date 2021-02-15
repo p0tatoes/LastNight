@@ -5,14 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background_color"
-    tools:context=".FirstNightConclusion">
+    tools:context=".SecondNightOutcome">
 
     <TextView
-        android:id="@+id/txtStory_FirstNightConclusion"
+        android:id="@+id/txtOutcome_SecondNightOutcome"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="112dp"
         android:fontFamily="@font/minecraft"
+        android:text="          "
         android:textColor="@color/text_color"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -21,16 +22,16 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/btnNext_FirstNightConclusion"
+        android:id="@+id/btnNext_SecondNightOutcome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
         android:text=">"
+        android:fontFamily="@font/minecraft"
         android:textSize="26sp"
         android:textStyle="bold"
         android:textColor="@color/text_color"
-        android:fontFamily="@font/minecraft"
         android:background="@drawable/btn_transparent_bg"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />

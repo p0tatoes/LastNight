@@ -5,33 +5,34 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background_color"
-    tools:context=".FirstNightConclusion">
+    tools:context=".SecondNightStory">
 
     <TextView
-        android:id="@+id/txtStory_FirstNightConclusion"
+        android:id="@+id/txtStory_SecondNigtStory"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="112dp"
+        android:text="You have travelled a long distance from where you were in the previous night."
         android:fontFamily="@font/minecraft"
         android:textColor="@color/text_color"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/btnNext_FirstNightConclusion"
+        android:id="@+id/btnNext_SecondNightStory"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
         android:text=">"
-        android:textSize="26sp"
         android:textStyle="bold"
+        android:textSize="26sp"
         android:textColor="@color/text_color"
-        android:fontFamily="@font/minecraft"
         android:background="@drawable/btn_transparent_bg"
+        android:fontFamily="@font/minecraft"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
