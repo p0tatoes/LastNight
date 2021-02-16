@@ -35,20 +35,6 @@ public class Ending extends AppCompatActivity implements View.OnClickListener{
 
         switch (view.getId()) {
             case R.id.btnNext_Ending:
-                 //if (greetGuard == true && breakDoor == true) {
-                     //guard.putExtra("BREAK_DOOR", breakDoor);
-                     //guard.putExtra("GIVE_FOOD", giveFood);
-                     //guard.putExtra("GIVE_LIGHTER", giveLighter);
-                     //startActivity(guard);
-                 //}
-                 //else if (giveFood == true) {
-                     //food.putExtra("BREAK_DOOR", breakDoor);
-                     //food.putExtra("GIVE_LIGHTER", giveLighter);
-                     //startActivity(food);
-                 //}
-                 //else if (giveLighter == true && breakDoor == true) {
-                     //startActivity(lighter);
-                 //}
 
                  if (giveLighter == true && breakDoor == true) {
                      lighter.putExtra("BREAK_DOOR", breakDoor);
