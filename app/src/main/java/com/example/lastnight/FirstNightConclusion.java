@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 public class FirstNightConclusion extends AppCompatActivity implements View.OnClickListener {
 
-    boolean bringLighter;
+    boolean bringLighter, greetGuard;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,6 +18,7 @@ public class FirstNightConclusion extends AppCompatActivity implements View.OnCl
         setContentView(R.layout.activity_first_night_conclusion);
 
         bringLighter = getIntent().getBooleanExtra("BROUGHT_LIGHTER", true);
+        greetGuard = getIntent().getBooleanExtra("GREET_GUARD", true);
 
         Button btnNext = findViewById(R.id.btnNext_FirstNightConclusion);
         btnNext.setOnClickListener(this);
@@ -43,6 +44,7 @@ public class FirstNightConclusion extends AppCompatActivity implements View.OnCl
         switch(v.getId()) {
             case R.id.btnNext_FirstNightConclusion:
                 next.putExtra("BROUGHT_LIGHTER", bringLighter);
+                next.putExtra("GREET_GUARD", greetGuard);
                 startActivity(next);
                 break;
         }

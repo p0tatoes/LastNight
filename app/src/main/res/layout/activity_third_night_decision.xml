@@ -5,10 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background_color"
-    tools:context=".SecondNightDecision">
+    tools:context=".ThirdNightDecision">
 
     <TextView
-        android:id="@+id/textView10"
+        android:id="@+id/textView16"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="168dp"
@@ -22,28 +22,28 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/btnDecision1_SecondNightDecision"
+        android:id="@+id/btnDecision1_ThirdNightDecision"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="72dp"
         android:layout_marginTop="44dp"
-        android:text="Leave"
-        android:fontFamily="@font/minecraft"
-        android:textSize="12sp"
         android:backgroundTint="@color/button_color"
+        android:text="ignore the door"
+        android:textSize="12sp"
+        android:fontFamily="@font/minecraft"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView10" />
+        app:layout_constraintTop_toBottomOf="@+id/textView16" />
 
     <Button
-        android:id="@+id/btnDecision2_SecondNightDecision"
+        android:id="@+id/btnDecision2_ThirdNightDecision"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="44dp"
         android:layout_marginEnd="72dp"
-        android:text="Give food"
-        android:textSize="12sp"
-        android:fontFamily="@font/minecraft"
         android:backgroundTint="@color/button_color"
+        android:text="Break the door"
+        android:fontFamily="@font/minecraft"
+        android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView10" />
+        app:layout_constraintTop_toBottomOf="@+id/textView16" />
 </androidx.constraintlayout.widget.ConstraintLayout>

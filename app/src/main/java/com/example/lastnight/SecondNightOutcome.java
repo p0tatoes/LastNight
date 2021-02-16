@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 public class SecondNightOutcome extends AppCompatActivity implements View.OnClickListener {
 
-    boolean bringLighter;
+    boolean bringLighter, greetGuard, giveFood;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,6 +18,8 @@ public class SecondNightOutcome extends AppCompatActivity implements View.OnClic
         setContentView(R.layout.activity_second_night_outcome);
 
         bringLighter = getIntent().getBooleanExtra("BROUGHT_LIGHTER", true);
+        greetGuard = getIntent().getBooleanExtra("GREET_GUARD", true);
+        giveFood = getIntent().getBooleanExtra("GIVE_FOOD", true);
 
         TextView txtOutcome = findViewById(R.id.txtOutcome_SecondNightOutcome);
         Button btnNext = findViewById(R.id.btnNext_SecondNightOutcome);
@@ -42,6 +44,8 @@ public class SecondNightOutcome extends AppCompatActivity implements View.OnClic
         switch (view.getId()) {
             case R.id.btnNext_SecondNightOutcome:
                 next.putExtra("BROUGHT_LIGHTER", bringLighter);
+                next.putExtra("GREET_GUARD", greetGuard);
+                next.putExtra("GIVE_FOOD", giveFood);
                 startActivity(next);
                 break;
         }

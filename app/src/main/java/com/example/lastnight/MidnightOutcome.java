@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 public class MidnightOutcome extends AppCompatActivity implements View.OnClickListener{
 
-    boolean bringLighter;
+    boolean bringLighter, greetGuard, giveFood, giveLighter;
     char decision_Midnight;
     int page = 1;
     TextView txtOutcome;
@@ -28,6 +28,9 @@ public class MidnightOutcome extends AppCompatActivity implements View.OnClickLi
 
         decision_Midnight = next.getCharExtra("decision_midnight", ' ');
         bringLighter = getIntent().getBooleanExtra("BROUGHT_LIGHTER", true);
+        greetGuard = getIntent().getBooleanExtra("GREET_GUARD", true);
+        giveFood = getIntent().getBooleanExtra("GIVE_FOOD", true);
+        giveLighter = getIntent().getBooleanExtra("GIVE_LIGHTER", true);
 
         if (decision_Midnight == 'a') {
             txtOutcome.setText("You approach the campsite.");
@@ -78,6 +81,9 @@ public class MidnightOutcome extends AppCompatActivity implements View.OnClickLi
                         txtOutcome.setText("They expressed their gratitude...");
                     }
                     else if (!bringLighter && page == 9) {
+                        third_Night.putExtra("GREET_GUARD", greetGuard);
+                        third_Night.putExtra("GIVE_FOOD", giveFood);
+                        third_Night.putExtra("GIVE_LIGHTER", giveLighter);
                         startActivity(third_Night);
                     }
                     else if (bringLighter && page == 9) {
@@ -90,8 +96,30 @@ public class MidnightOutcome extends AppCompatActivity implements View.OnClickLi
                         txtOutcome.setText("After gathering and preparing your supplies, you continued your journey");
                     }
                     else if (bringLighter && page == 12) {
+                        third_Night.putExtra("GREET_GUARD", greetGuard);
+                        third_Night.putExtra("GIVE_FOOD", giveFood);
+                        third_Night.putExtra("GIVE_LIGHTER", giveLighter);
                         startActivity(third_Night);
                     }
+                }
+
+                else if (decision_Midnight == 'b' && page == 2) {
+                    txtOutcome.setText("After a while, you reached the market and started scavenging.");
+                }
+                else if (decision_Midnight == 'b' && page == 3) {
+                    txtOutcome.setText("While scavenging, you notice that there is also someone else inside the market");
+                }
+                else if (decision_Midnight == 'b' && page == 4) {
+                    txtOutcome.setText("It was the man from the previous night who asked for food.");
+                }
+                else if (decision_Midnight == 'b' && page == 5) {
+                    txtOutcome.setText("You only managed to get little food from scavenging.");
+                }
+                else if (decision_Midnight == 'b' && page == 6) {
+                    third_Night.putExtra("GREET_GUARD", greetGuard);
+                    third_Night.putExtra("GIVE_FOOD", giveFood);
+                    third_Night.putExtra("GIVE_LIGHTER", giveLighter);
+                    startActivity(third_Night);
                 }
 
 

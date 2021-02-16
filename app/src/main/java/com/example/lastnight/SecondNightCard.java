@@ -9,7 +9,7 @@ import android.widget.Button;
 
 public class SecondNightCard extends AppCompatActivity implements View.OnClickListener{
 
-    boolean bringLighter;
+    boolean bringLighter, greetGuard;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,6 +17,7 @@ public class SecondNightCard extends AppCompatActivity implements View.OnClickLi
         setContentView(R.layout.activity_second_night_card);
 
         bringLighter = getIntent().getBooleanExtra("BROUGHT_LIGHTER", true);
+        greetGuard = getIntent().getBooleanExtra("GREET_GUARD", true);
 
         Button btnNext = findViewById(R.id.btnNext_SecondNightCard);
         btnNext.setOnClickListener(this);
@@ -28,6 +29,7 @@ public class SecondNightCard extends AppCompatActivity implements View.OnClickLi
         switch (v.getId()) {
             case R.id.btnNext_SecondNightCard:
                 next.putExtra("BROUGHT_LIGHTER", bringLighter);
+                next.putExtra("GREET_GUARD", greetGuard);
                 startActivity(next);
                 break;
         }
