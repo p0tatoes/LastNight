@@ -1,12 +1,16 @@
 package com.example.lastnight;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.solver.state.State;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import pl.droidsonroids.gif.GifImageView;
 
 public class MidnightOutcome extends AppCompatActivity implements View.OnClickListener{
 
@@ -23,6 +27,9 @@ public class MidnightOutcome extends AppCompatActivity implements View.OnClickLi
         Button btnNext = findViewById(R.id.btnNext_MidnightOutcome);
         btnNext.setOnClickListener(this);
         txtOutcome = findViewById(R.id.txt_MidnightOutcome);
+        ConstraintLayout midOutcoBG = findViewById(R.id.midOutcoBG);
+        GifImageView groupnotMove = findViewById(R.id.groupnotMove);
+        GifImageView groupMove = findViewById(R.id.groupMove);
 
         Intent next = getIntent();
 
@@ -34,15 +41,21 @@ public class MidnightOutcome extends AppCompatActivity implements View.OnClickLi
 
         if (decision_Midnight == 'a') {
             txtOutcome.setText("You approach the campsite.");
+            groupMove.setVisibility(View.INVISIBLE);
+            groupnotMove.setVisibility(View.VISIBLE);
         }
         else if (decision_Midnight == 'b') {
             txtOutcome.setText("You decided to continue to the supermarket.");
+            groupMove.setVisibility(View.INVISIBLE);
+            groupnotMove.setVisibility(View.VISIBLE);
         }
 
     }
 
     @Override
     public void onClick (View view) {
+        GifImageView groupMove = findViewById(R.id.groupMove);
+        GifImageView groupnotMove = findViewById(R.id.groupnotMove);
 
         Intent third_Night = new Intent(this, ThirdNight.class);
         switch (view.getId()) {
@@ -64,9 +77,12 @@ public class MidnightOutcome extends AppCompatActivity implements View.OnClickLi
                 else if (decision_Midnight == 'a') {
                     if (!bringLighter && page == 6) {
                         txtOutcome.setText("You check your bag, but did not find anything of value to offer.");
+
                     }
                     else if (bringLighter && page == 6) {
                         txtOutcome.setText("You check your bag and decided to offer your lighter.");
+                        groupMove.setVisibility(View.VISIBLE);
+
                     }
                     else if (!bringLighter && page == 7) {
                         txtOutcome.setText("The group tells you to leave and never approach them if you don't have anything of value to offer.");

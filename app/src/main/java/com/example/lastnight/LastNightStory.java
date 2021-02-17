@@ -1,12 +1,16 @@
 package com.example.lastnight;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import pl.droidsonroids.gif.GifImageView;
 
 public class LastNightStory extends AppCompatActivity implements View.OnClickListener{
 
@@ -18,6 +22,9 @@ public class LastNightStory extends AppCompatActivity implements View.OnClickLis
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_last_night_story);
+        GifImageView badEnd = findViewById(R.id.badEnd);
+        ConstraintLayout lnStoryBg = findViewById(R.id.lnStoryBG);
+        lnStoryBg.setBackgroundColor(Color.parseColor("#353535"));
 
         breakDoor = getIntent().getBooleanExtra("BREAK_DOOR", true);
         greetGuard = getIntent().getBooleanExtra("GREET_GUARD", true);
@@ -28,17 +35,22 @@ public class LastNightStory extends AppCompatActivity implements View.OnClickLis
         Button btnNext = findViewById(R.id.btnNext_LastNightStory);
         btnNext.setOnClickListener(this);
 
+
         txtStory.setText("You have arrived at your destination: 'Route 7'");
+
     }
 
     @Override
     public void onClick (View view) {
+        ConstraintLayout lnStoryBG = findViewById(R.id.lnStoryBG);
+        GifImageView badEnd = findViewById(R.id.badEnd);
 
         Intent next = new Intent(this, Ending.class);
         switch (view.getId()) {
             case R.id.btnNext_LastNightStory:
             page++;
             if (page == 2) {
+                badEnd.setVisibility(View.VISIBLE);
                 txtStory.setText("Just after arriving, you immediately started the search for your sister.");
             }
             else if (page == 3) {
@@ -103,6 +115,8 @@ public class LastNightStory extends AppCompatActivity implements View.OnClickLis
             }
 
             else if (breakDoor == false) {
+                lnStoryBG.setBackgroundColor(Color.parseColor("#353535"));
+                badEnd.setVisibility(View.VISIBLE);
                 if (page == 6) {
                     txtStory.setText("After you set up camp, you rested for the night.");
                 }

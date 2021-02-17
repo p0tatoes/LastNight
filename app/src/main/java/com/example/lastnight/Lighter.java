@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import pl.droidsonroids.gif.GifImageView;
+
 public class Lighter extends AppCompatActivity implements View.OnClickListener{
 
     boolean breakDoor, giveFood, greetGuard;
@@ -25,9 +27,11 @@ public class Lighter extends AppCompatActivity implements View.OnClickListener{
 
         txtStory = findViewById(R.id.txt_Lighter);
         Button btnNext = findViewById(R.id.btnNext_Lighter);
+        GifImageView groupFire = findViewById(R.id.groupFire);
         btnNext.setOnClickListener(this);
 
         txtStory.setText("With the lighter, the group you encountered during 'Midnight' were able to start a campfire.");
+        groupFire.setVisibility(View.VISIBLE);
     }
 
     @Override
