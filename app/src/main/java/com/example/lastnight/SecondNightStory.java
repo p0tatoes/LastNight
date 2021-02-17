@@ -11,11 +11,15 @@ import android.widget.TextView;
 public class SecondNightStory extends AppCompatActivity implements View.OnClickListener{
 
     int page = 1;
+    boolean bringLighter, greetGuard;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second_night_story);
+
+        bringLighter = getIntent().getBooleanExtra("BROUGHT_LIGHTER", true);
+        greetGuard = getIntent().getBooleanExtra("GREET_GUARD", true);
 
         Button btnNext = findViewById(R.id.btnNext_SecondNightStory);
         btnNext.setOnClickListener(this);
@@ -46,6 +50,8 @@ public class SecondNightStory extends AppCompatActivity implements View.OnClickL
                     page++;
                 }
                 else {
+                    next.putExtra("BROUGHT_LIGHTER", bringLighter);
+                    next.putExtra("GREET_GUARD", greetGuard);
                     startActivity(next);
                 }
                 break;

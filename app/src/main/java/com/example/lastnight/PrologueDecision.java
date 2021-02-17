@@ -31,12 +31,12 @@ public class PrologueDecision extends AppCompatActivity implements View.OnClickL
         switch (view.getId()) {
             case R.id.btnDecision1_Prologue:
                 bringLighter = true;
-                next.putExtra("broughtLighter", bringLighter);
+                next.putExtra("BROUGHT_LIGHTER", bringLighter);
                 startActivity(next);
                 break;
             case R.id.btnDecision2_Prologue:
                 bringLighter = false;
-                next.putExtra("broughtLighter", bringLighter);
+                next.putExtra("BROUGHT_LIGHTER", bringLighter);
                 startActivity(next);
                 break;
         }

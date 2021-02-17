@@ -9,10 +9,15 @@ import android.widget.Button;
 
 public class FirstNightDecision extends AppCompatActivity implements View.OnClickListener {
 
+    boolean bringLighter, greetGuard;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_first_night_decision);
+
+        bringLighter = getIntent().getBooleanExtra("BROUGHT_LIGHTER", true);
+        greetGuard = getIntent().getBooleanExtra("GREET_GUARD", true);
 
         Button btnDecision1 = findViewById(R.id.btnDecision1_FirstNight);
         Button btnDecision2 = findViewById(R.id.btnDecision2_FirstNight);
@@ -30,11 +35,15 @@ public class FirstNightDecision extends AppCompatActivity implements View.OnClic
             case R.id.btnDecision1_FirstNight:
                 decision_FirstNight = 1;
                 next.putExtra("decision_FirstNight", decision_FirstNight);
+                next.putExtra("BROUGHT_LIGHTER", bringLighter);
+                next.putExtra("GREET_GUARD", greetGuard);
                 startActivity(next);
                 break;
             case R.id.btnDecision2_FirstNight:
                 decision_FirstNight = 2;
                 next.putExtra("decision_FirstNight", decision_FirstNight);
+                next.putExtra("BROUGHT_LIGHTER", bringLighter);
+                next.putExtra("GREET_GUARD", greetGuard);
                 startActivity(next);
                 break;
         }

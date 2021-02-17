@@ -10,11 +10,15 @@ import android.widget.Button;
 public class PrologueDecision2 extends AppCompatActivity implements View.OnClickListener{
 
     char p2Decision;
+    boolean greetGuard;
+    boolean bringLighter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_prologue_decision2);
+
+        bringLighter = getIntent().getBooleanExtra("BROUGHT_LIGHTER", true);
 
         Button btnDecision1 = findViewById(R.id.btnDecision1_Prologue2);
         Button btnDecision2 = findViewById(R.id.btnDecision2_Prologue2);
@@ -31,12 +35,18 @@ public class PrologueDecision2 extends AppCompatActivity implements View.OnClick
         switch (view.getId()) {
             case R.id.btnDecision1_Prologue2:
                 p2Decision = 'a';
+                greetGuard = true;
                 p2Outcome2.putExtra("p2_decision", p2Decision);
+                p2Outcome2.putExtra("BROUGHT_LIGHTER", bringLighter);
+                p2Outcome2.putExtra("GREET_GUARD", greetGuard);
                 startActivity(p2Outcome2);
                 break;
             case R.id.btnDecision2_Prologue2:
                 p2Decision = 'b';
+                greetGuard = false;
                 p2Outcome2.putExtra("p2_decision", p2Decision);
+                p2Outcome2.putExtra("BROUGHT_LIGHTER", bringLighter);
+                p2Outcome2.putExtra("GREET_GUARD", greetGuard);
                 startActivity(p2Outcome2);
                 break;
 

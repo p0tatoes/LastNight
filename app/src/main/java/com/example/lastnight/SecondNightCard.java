@@ -9,10 +9,15 @@ import android.widget.Button;
 
 public class SecondNightCard extends AppCompatActivity implements View.OnClickListener{
 
+    boolean bringLighter, greetGuard;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second_night_card);
+
+        bringLighter = getIntent().getBooleanExtra("BROUGHT_LIGHTER", true);
+        greetGuard = getIntent().getBooleanExtra("GREET_GUARD", true);
 
         Button btnNext = findViewById(R.id.btnNext_SecondNightCard);
         btnNext.setOnClickListener(this);
@@ -23,6 +28,8 @@ public class SecondNightCard extends AppCompatActivity implements View.OnClickLi
         Intent next = new Intent(this, SecondNightStory.class);
         switch (v.getId()) {
             case R.id.btnNext_SecondNightCard:
+                next.putExtra("BROUGHT_LIGHTER", bringLighter);
+                next.putExtra("GREET_GUARD", greetGuard);
                 startActivity(next);
                 break;
         }
