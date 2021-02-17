@@ -55,7 +55,7 @@ public class MidnightOutcome extends AppCompatActivity implements View.OnClickLi
     @Override
     public void onClick (View view) {
         GifImageView groupMove = findViewById(R.id.groupMove);
-        GifImageView groupnotMove = findViewById(R.id.groupnotMove);
+
 
         Intent third_Night = new Intent(this, ThirdNight.class);
         switch (view.getId()) {
