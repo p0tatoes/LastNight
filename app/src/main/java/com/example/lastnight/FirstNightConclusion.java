@@ -37,15 +37,15 @@ public class FirstNightConclusion extends AppCompatActivity implements View.OnCl
         switch (decision_FirstNight) {
             case 1:
                 txtStory.setText("You decided to go outside and gather wood. You managed to find wood nearby, enough to last for the night. As you head back, you feel a presence watching over you.");
-                txtStory.setTextColor(Color.parseColor("#000000"));
-                fnConclBG.setBackgroundColor(Color.parseColor("#FFFFF"));
+                txtStory.setTextColor(Color.parseColor("#FFFFFF"));
+                fnConclBG.setBackgroundColor(Color.parseColor("#161616"));
                 campfireMove.setVisibility(View.VISIBLE);
                 campfireSmoke.setVisibility(View.INVISIBLE);
                 break;
             case 2:
                 txtStory.setText("You decided to play safe and stay inside. You prayed that the fire would not go out until morning, though the fire went out. You felt cold for most of the night, but you managed to make it until morning.");
-                txtStory.setTextColor(Color.parseColor("#000000"));
-                fnConclBG.setBackgroundColor(Color.parseColor("#FFFFF"));
+                txtStory.setTextColor(Color.parseColor("#FFFFFF"));
+                fnConclBG.setBackgroundColor(Color.parseColor("#161616"));
                 campfireMove.setVisibility(View.INVISIBLE);
                 campfireSmoke.setVisibility(View.VISIBLE);
 
