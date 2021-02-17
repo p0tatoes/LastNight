@@ -45,7 +45,7 @@ public class MidnightOutcome extends AppCompatActivity implements View.OnClickLi
             groupnotMove.setVisibility(View.VISIBLE);
         }
         else if (decision_Midnight == 'b') {
-            txtOutcome.setText("You decided to continue to the supermarket.");
+            txtOutcome.setText("You passed by the campsite and decided to continue to the supermarket.");
             groupMove.setVisibility(View.INVISIBLE);
             groupnotMove.setVisibility(View.VISIBLE);
         }

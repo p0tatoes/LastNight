@@ -14,27 +14,19 @@ public class Credits extends AppCompatActivity implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_credits);
 
-
+        Button btnNxt_TryAgain = findViewById(R.id.btnNxt_TryAgain);
+        btnNxt_TryAgain.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
-        Button btnNxt_TryAgain = findViewById(R.id.btnNxt_TryAgain);
 
-
-        btnNxt_TryAgain.setOnClickListener(this);
-
-
-        Intent i = new Intent(Credits.this, PrologueCard.class);
+        Intent tryAgain  = new Intent(Credits.this, PrologueCard.class);
 
 
         switch (v.getId()) {
             case R.id.btnNxt_TryAgain:
-
-
-                startActivity(i);
-
-
+                startActivity(tryAgain);
                 break;
         }
     }

@@ -47,7 +47,7 @@ public class Lighter extends AppCompatActivity implements View.OnClickListener{
                     txtStory.setText("They were able to keep warm during the night.");
                 }
                 else if (page == 3) {
-                    txtStory.setText("They greeted you when you passed by their campsite.");
+                    txtStory.setText("On you way back, they greeted you when you passed by their campsite.");
                 }
                 else if (page == 4) {
                     if (breakDoor == true && greetGuard == true) {
